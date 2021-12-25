@@ -1,4 +1,4 @@
-const { pool } = require("../adapters/database/postgresql")
+const { pg_client } = require("../adapters/database/postgresql")
 
 exports.getVehicleList = async (req, res) => {
 

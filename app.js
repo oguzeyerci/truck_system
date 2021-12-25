@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 
-const pg_client  = require('./app/adapters/database/postgresql')
+const { pg_client }  = require('./app/adapters/database/postgresql')
 const vehicleRoute  = require('./app/routes/vehicleRoute')
 const deviceRoute  = require('./app/routes/deviceRoute')
 const deviceTypeRoute  = require('./app/routes/deviceTypeRoute')
