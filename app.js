@@ -20,6 +20,7 @@ app.get('/',(req,res)=>{
         "<h2>/logTemp</h2> " +
         "<h2>/logLocation</h2>")
 })
+
 // const listem=[
 //     {id: 1,isim:"oguz",yas:31},
 //     {id: 2,isim:"onur",yas:12},
