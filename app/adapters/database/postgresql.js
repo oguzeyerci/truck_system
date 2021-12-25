@@ -7,6 +7,7 @@ const options = {
     password: "oguz1111",
     port: 5432,
 }
+//console.log(process.env.USER)
 
 const pg_client = new Pool(options)
 try {
