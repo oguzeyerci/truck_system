@@ -11,6 +11,7 @@ const logLocationRoute  = require('./app/routes/logLocationRoute')
 app.use(express.json())
 app.use(express.urlencoded({ extended: true}))
 
+
 app.get('/',(req,res)=>{
     console.log("Ana Sayfa")
     res.send("<h2>Seçenekler:</h2>" +
