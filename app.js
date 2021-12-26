@@ -80,6 +80,7 @@ app.get('/',(req,res)=>{
 //     }
 // })
 //console.log(new Date().getTime())
+
 app.use('/vehicle',vehicleRoute)
 app.use('/device',deviceRoute);
 app.use('/deviceType',deviceTypeRoute);
