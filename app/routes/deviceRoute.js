@@ -6,6 +6,6 @@ const router = express.Router()
 router.route('/list').get(getDeviceList)
 router.route('/add').post(deviceAdd)
 router.route('/update').patch(deviceUpdate)
-router.route('/delete').delete(deviceDelete)
+router.route('/delete/:id').delete(deviceDelete)
 
 module.exports = router
