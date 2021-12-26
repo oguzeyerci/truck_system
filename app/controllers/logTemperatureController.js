@@ -1,9 +1,12 @@
 const { pg_client } = require("../adapters/database/postgresql")
 
-exports.getTempList = async (req, res) => {
+async function getTempList(req, res) {
 
 }
 
-exports.tempAdd = async (req, res) => {
+async function tempAdd(req, res){
 
 }
+
+exports.tempAdd = tempAdd
+exports.getTempList = getTempList

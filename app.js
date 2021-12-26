@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
-
+const dotenv = require('dotenv')
+dotenv.config()
 const { pg_client }  = require('./app/adapters/database/postgresql')
 const vehicleRoute  = require('./app/routes/vehicleRoute')
 const deviceRoute  = require('./app/routes/deviceRoute')
