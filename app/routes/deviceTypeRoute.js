@@ -5,6 +5,6 @@ const router = express.Router()
 
 router.route('/list').get(getTypeList)
 router.route('/add').post(typeAdd)
-router.route('/delete').delete(typeDelete)
+router.route('/delete/:id').delete(typeDelete)
 
 module.exports = router
