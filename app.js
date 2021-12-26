@@ -79,7 +79,7 @@ app.get('/',(req,res)=>{
 //         res.send(user)
 //     }
 // })
-
+//console.log(new Date().getTime())
 app.use('/vehicle',vehicleRoute)
 app.use('/device',deviceRoute);
 app.use('/deviceType',deviceTypeRoute);
