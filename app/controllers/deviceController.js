@@ -2,16 +2,21 @@ const { pg_client } = require("../adapters/database/postgresql")
 
 //arrow function version
 
-exports.getDeviceList = async (req, res) => {
-    try{
-        const deviceListResult = await pg_client.query("select id,vehicle_id,device_type_id,device_name,is_online,is_active from devices")
-        res.json(deviceListResult.rows)
-    }
-    catch (e){
-        res.status(404).send(e)
-    }
-}
 
+//promise version
+exports.getDeviceList = async (req, res) => {
+
+    const deviceListResult = pg_client.query("select id,vehicle_id,device_type_id,device_name,is_online,is_active from devices")
+    deviceListResult.then((result)=>{
+        res.json(result.rows)
+    }).catch((e)=>{
+        res.status(404).send(e)
+    })
+
+
+
+}
+//try catch version
 exports.deviceAdd = async (req, res) => {
     const device = req.body
     try {
