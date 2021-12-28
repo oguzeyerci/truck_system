@@ -6,8 +6,8 @@ const { pg_client } = require("../adapters/database/postgresql")
 //promise version
 exports.getDeviceList = async (req, res) => {
 
-    const deviceListResult = pg_client.query("select id,vehicle_id,device_type_id,device_name,is_online,is_active from devices")
-    deviceListResult.then((result)=>{
+    await pg_client.query("select id,vehicle_id,device_type_id,device_name,is_online,is_active from devices")
+        .then((result)=>{
         res.json(result.rows)
     }).catch((e)=>{
         res.status(404).send(e)
@@ -28,15 +28,19 @@ exports.deviceAdd = async (req, res) => {
     }
 }
 
+//promise version
 exports.deviceUpdate = async (req, res) => {
     const device = req.body
-    try {
-        await pg_client.query(`update devices set vehicle_id=${device.vehicle_id},device_type_id=${device.device_type_id},device_name='${device.device_name}',is_online=${device.is_online},is_active=${device.is_active} where id=${device.id}`)
-        res.send("Araç Güncelleme Başarılı")
-    }
-    catch (e){
-        res.status(404).send(e.message)
-    }
+
+    await pg_client.query(`update devices set vehicle_id=${device.vehicle_id},device_type_id=${device.device_type_id},device_name='${device.device_name}',is_online=${device.is_online},is_active=${device.is_active} where id=${device.id}`)
+        .then(()=>{
+            res.send("Araç Güncelleme Başarılı")
+        }).catch((e)=>{
+            res.status(404).send(e.message)
+        })
+
+
+
 }
 
 exports.deviceDelete = async (req, res) => {
