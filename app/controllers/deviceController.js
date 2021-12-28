@@ -12,10 +12,9 @@ exports.getDeviceList = async (req, res) => {
     }).catch((e)=>{
         res.status(404).send(e)
     })
-
-
-
 }
+
+
 //try catch version
 exports.deviceAdd = async (req, res) => {
     const device = req.body
