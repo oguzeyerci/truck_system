@@ -3,7 +3,7 @@ const { pg_client } = require("../adapters/database/postgresql")
 //arrow function version
 
 
-//promise version
+//promise
 exports.getDeviceList = async (req, res) => {
 
     await pg_client.query("select id,vehicle_id,device_type_id,device_name,is_online,is_active from devices")
@@ -15,7 +15,7 @@ exports.getDeviceList = async (req, res) => {
 }
 
 
-//try catch version
+//try catch
 exports.deviceAdd = async (req, res) => {
     const device = req.body
     try {
@@ -28,7 +28,7 @@ exports.deviceAdd = async (req, res) => {
     }
 }
 
-//promise version
+//promise
 exports.deviceUpdate = async (req, res) => {
     const device = req.body
 
@@ -42,7 +42,7 @@ exports.deviceUpdate = async (req, res) => {
 
 
 }
-
+//try catch
 exports.deviceDelete = async (req, res) => {
     const id = req.params.id
     try {
