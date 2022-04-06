@@ -21,7 +21,7 @@ exports.deviceAdd = async (req, res) => {
     try {
         await pg_client.query(`insert into devices(vehicle_id,device_type_id,device_name,is_online,is_active) 
                        values(${device.vehicle_id}, ${device.device_type_id}, '${device.device_name}',${device.is_online},${device.is_active})`)
-        res.send("Cihaz Ekleme Başarılı. Deneme")
+        res.send("Cihaz Ekleme Başarılı...")
     }
     catch (e){
         res.status(404).send(e.message)
