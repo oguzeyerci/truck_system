@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true}))
 
 app.get('/',(req,res)=>{
     console.log("Ana Sayfa")
-    res.send("<h2>Seçenekler:</h2>" +
+    res.send("<h2>Options:</h2>" +
         "<h2>/vehicle</h2> " +
         "<h2>/device</h2> " +
         "<h2>/deviceType</h2> " +
